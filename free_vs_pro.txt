@@ -1,0 +1,16 @@
+**Free Version:**
+- Basic password strength analysis
+- Simple breach database check (limited queries)
+- Educational content (5 articles)
+- HailBytes branded footer with dofollow link
+- Single site license
+
+**Pro Version ($79/year):**
+- Advanced entropy calculations
+- Unlimited breach database queries
+- Complete educational library (20+ articles)
+- Lead capture forms and CRM integration
+- Custom branding and themes
+- Analytics dashboard
+- Unlimited domains
+- Priority support
