@@ -199,6 +199,16 @@ Strength levels: Very Weak (0–19) · Weak (20–39) · Fair (40–59) · Stron
 
 ---
 
+## Enterprise Support
+
+[![HailBytes - Managed Security Awareness Training](https://hailbytes.com/images/icons/hb_hb_white_horizontal.png)](https://www.hailbytes.com/sat?utm_source=github&utm_medium=repo_readme&utm_campaign=hailbytes-password-analyzer&utm_content=enterprise_banner)
+
+Running phishing simulations at scale? **HailBytes SAT** delivers managed GoPhish with enterprise support, on AWS and Azure Marketplaces.
+
+[**Get Enterprise Support ->**](https://www.hailbytes.com/sat?utm_source=github&utm_medium=repo_readme&utm_campaign=hailbytes-password-analyzer&utm_content=enterprise_banner)
+
+---
+
 ## About HailBytes
 
 [HailBytes](https://hailbytes.com) provides cybersecurity training, phishing simulation, and security awareness tools for organizations.
