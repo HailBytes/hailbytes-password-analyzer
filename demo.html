@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HailBytes Password Strength Analyzer — Demo</title>
+  <script type="module" src="hailbytes-password-strength.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #0d0d1a;
+      color: #e0e0e0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ── Nav ── */
+    nav {
+      width: 100%;
+      background: #1a1a2e;
+      border-bottom: 1px solid #2d2d50;
+      padding: .9rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: .6rem;
+      text-decoration: none; color: #fff;
+    }
+    .nav-logo-mark {
+      width: 32px; height: 32px;
+      background: #ff6b35;
+      border-radius: 7px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .95rem; font-weight: 800; color: #fff;
+    }
+    .nav-brand { font-size: 1.05rem; font-weight: 700; }
+    .nav-tagline {
+      margin-left: auto;
+      font-size: .8rem;
+      color: #6b7280;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      text-align: center;
+      padding: 4rem 1.5rem 2rem;
+      max-width: 700px;
+      width: 100%;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: .4rem;
+      background: rgba(255,107,53,.12);
+      border: 1px solid rgba(255,107,53,.3);
+      color: #ff6b35;
+      border-radius: 20px;
+      padding: .25rem .85rem;
+      font-size: .78rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 {
+      font-size: clamp(1.7rem, 5vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #ffffff 40%, #ff6b35);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero p {
+      color: #8892a4;
+      font-size: 1.05rem;
+      margin-bottom: 2rem;
+      max-width: 500px;
+      margin-left: auto; margin-right: auto;
+    }
+
+    /* ── Component card ── */
+    .demo-card {
+      width: 100%;
+      max-width: 620px;
+      padding: 0 1.5rem 1.5rem;
+    }
+
+    /* ── Theme toggle ── */
+    .theme-toggle {
+      display: flex;
+      gap: .5rem;
+      margin-bottom: 1rem;
+      justify-content: flex-end;
+    }
+    .theme-btn {
+      padding: .3rem .8rem;
+      border-radius: 6px;
+      border: 1px solid #2d2d50;
+      background: #1a1a2e;
+      color: #8892a4;
+      font-size: .8rem;
+      cursor: pointer;
+      transition: all .15s;
+    }
+    .theme-btn.active, .theme-btn:hover {
+      background: #ff6b35;
+      border-color: #ff6b35;
+      color: #fff;
+    }
+
+    /* ── Event log ── */
+    .event-section {
+      width: 100%;
+      max-width: 620px;
+      padding: 0 1.5rem 2rem;
+    }
+    .event-title {
+      font-size: .78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      color: #6b7280;
+      margin-bottom: .6rem;
+    }
+    .event-log {
+      background: #1a1a2e;
+      border: 1px solid #2d2d50;
+      border-radius: 8px;
+      padding: .75rem 1rem;
+      font-family: 'Courier New', monospace;
+      font-size: .78rem;
+      color: #2ed573;
+      min-height: 60px;
+      max-height: 150px;
+      overflow-y: auto;
+    }
+    .event-log .entry { margin-bottom: .3rem; opacity: .7; }
+    .event-log .entry:last-child { opacity: 1; }
+
+    /* ── Code snippet ── */
+    .code-section {
+      width: 100%;
+      max-width: 620px;
+      padding: 0 1.5rem 2rem;
+    }
+    .code-title {
+      font-size: .78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      color: #6b7280;
+      margin-bottom: .6rem;
+    }
+    pre {
+      background: #1a1a2e;
+      border: 1px solid #2d2d50;
+      border-radius: 8px;
+      padding: 1rem 1.2rem;
+      overflow-x: auto;
+      font-family: 'Courier New', monospace;
+      font-size: .82rem;
+      color: #e0e0e0;
+      line-height: 1.65;
+    }
+    .kw  { color: #ff6b35; }
+    .str { color: #2ed573; }
+    .cmt { color: #6b7280; font-style: italic; }
+    .tag { color: #60a5fa; }
+    .attr{ color: #fbbf24; }
+
+    /* ── Features grid ── */
+    .features {
+      width: 100%;
+      max-width: 620px;
+      padding: 0 1.5rem 3rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: .75rem;
+    }
+    .feature-card {
+      background: #1a1a2e;
+      border: 1px solid #2d2d50;
+      border-radius: 10px;
+      padding: 1rem;
+    }
+    .feature-icon { font-size: 1.4rem; margin-bottom: .4rem; }
+    .feature-name { font-size: .88rem; font-weight: 700; margin-bottom: .2rem; }
+    .feature-desc { font-size: .78rem; color: #6b7280; }
+
+    /* ── Footer ── */
+    footer {
+      width: 100%;
+      background: #1a1a2e;
+      border-top: 1px solid #2d2d50;
+      padding: 1.2rem 2rem;
+      text-align: center;
+      font-size: .82rem;
+      color: #6b7280;
+      margin-top: auto;
+    }
+    footer a { color: #ff6b35; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="https://hailbytes.com" target="_blank" rel="noopener">
+      <div class="nav-logo-mark">H</div>
+      <span class="nav-brand">HailBytes</span>
+    </a>
+    <span class="nav-tagline">Password Strength Analyzer — Web Component Demo</span>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-badge">🔐 Zero-dependency Web Component</div>
+    <h1>Password Strength Analyzer</h1>
+    <p>A self-contained web component that works in any framework — or no framework at all. Drop in a single <code style="background:rgba(255,107,53,.12);color:#ff6b35;padding:.1rem .35rem;border-radius:4px;font-size:.9em">&lt;script type="module"&gt;</code> and you're done.</p>
+  </div>
+
+  <div class="demo-card">
+    <div class="theme-toggle">
+      <button class="theme-btn active" id="btn-dark">🌙 Dark</button>
+      <button class="theme-btn" id="btn-light">☀️ Light</button>
+    </div>
+    <hailbytes-password-strength id="demo-component" theme="dark"></hailbytes-password-strength>
+  </div>
+
+  <div class="event-section">
+    <div class="event-title">🔴 Live <code>password-score</code> Events</div>
+    <div class="event-log" id="event-log">
+      <div class="entry cmt">// Events will appear here as you type above…</div>
+    </div>
+  </div>
+
+  <div class="code-section">
+    <div class="code-title">📋 Integration — as simple as this</div>
+    <pre><span class="cmt">&lt;!-- 1. Load via CDN --&gt;</span>
+<span class="tag">&lt;script</span> <span class="attr">type</span>=<span class="str">"module"</span>
+  <span class="attr">src</span>=<span class="str">"https://cdn.jsdelivr.net/gh/HailBytes/hailbytes-password-analyzer@main/hailbytes-password-strength.js"</span><span class="tag">&gt;&lt;/script&gt;</span>
+
+<span class="cmt">&lt;!-- 2. Use the element --&gt;</span>
+<span class="tag">&lt;hailbytes-password-strength</span> <span class="attr">theme</span>=<span class="str">"dark"</span><span class="tag">&gt;&lt;/hailbytes-password-strength&gt;</span>
+
+<span class="cmt">&lt;!-- 3. Listen for score events (optional) --&gt;</span>
+<span class="tag">&lt;script&gt;</span>
+  document.querySelector(<span class="str">'hailbytes-password-strength'</span>)
+    .addEventListener(<span class="str">'password-score'</span>, (e) =&gt; {
+      console.log(e.detail); <span class="cmt">// { score, label, entropy, checks }</span>
+    });
+<span class="tag">&lt;/script&gt;</span></pre>
+  </div>
+
+  <div class="features">
+    <div class="feature-card">
+      <div class="feature-icon">⚡</div>
+      <div class="feature-name">No Build Step</div>
+      <div class="feature-desc">Single JS file, works via &lt;script type="module"&gt;</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🧩</div>
+      <div class="feature-name">Framework Agnostic</div>
+      <div class="feature-desc">Hugo, React, Vue, Angular, Svelte, plain HTML</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🔒</div>
+      <div class="feature-name">Shadow DOM</div>
+      <div class="feature-desc">Styles are fully encapsulated — zero CSS conflicts</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🧮</div>
+      <div class="feature-name">Static Analysis</div>
+      <div class="feature-desc"><code>HailbytesPasswordStrength.analyze(pw)</code> — no DOM needed</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🌗</div>
+      <div class="feature-name">Light / Dark Theme</div>
+      <div class="feature-desc">Via <code>theme="dark"</code> attribute</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📡</div>
+      <div class="feature-name">Custom Events</div>
+      <div class="feature-desc">Fires <code>password-score</code> on each keystroke</div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2024 <a href="https://hailbytes.com" target="_blank" rel="noopener">HailBytes</a> —
+    <a href="https://github.com/HailBytes/hailbytes-password-analyzer" target="_blank" rel="noopener">GitHub</a> —
+    Licensed under <a href="LICENSE" target="_blank">MPL-2.0</a>
+  </footer>
+
+  <script>
+    // Theme switcher
+    const comp = document.getElementById('demo-component');
+    const btnDark  = document.getElementById('btn-dark');
+    const btnLight = document.getElementById('btn-light');
+
+    btnDark.addEventListener('click', () => {
+      comp.setAttribute('theme', 'dark');
+      btnDark.classList.add('active');
+      btnLight.classList.remove('active');
+    });
+    btnLight.addEventListener('click', () => {
+      comp.setAttribute('theme', 'light');
+      btnLight.classList.add('active');
+      btnDark.classList.remove('active');
+    });
+
+    // Event logger
+    const log = document.getElementById('event-log');
+    let logCount = 0;
+    comp.addEventListener('password-score', (e) => {
+      const { score, label, entropy } = e.detail;
+      logCount++;
+      const entry = document.createElement('div');
+      entry.className = 'entry';
+      entry.textContent = `[${String(logCount).padStart(3, '0')}] password-score → score:${score} label:"${label}" entropy:${entropy}bits`;
+      log.appendChild(entry);
+      // Keep last 20 entries
+      while (log.children.length > 21) log.removeChild(log.firstChild);
+      log.scrollTop = log.scrollHeight;
+    });
+  </script>
+</body>
+</html>
