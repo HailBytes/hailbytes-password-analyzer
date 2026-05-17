@@ -6,7 +6,7 @@
 
 Real-time password strength analysis with security awareness training. Check passwords against breach databases and educate users on cybersecurity best practices.
 
-## 🔐 Key Features
+## Key Features
 
 - **Real-Time Analysis** - Instant password strength feedback as users type
 - **Entropy Calculation** - Mathematical assessment using industry-standard algorithms
@@ -17,7 +17,7 @@ Real-time password strength analysis with security awareness training. Check pas
 - **Privacy Focused** - All analysis performed client-side only
 - **Mobile Responsive** - Works on all devices and screen sizes
 
-## 📚 Educational Features
+## Educational Features
 
 - Common attack method explanations (brute force, dictionary attacks, credential stuffing)
 - Industry breach statistics and financial impact data
@@ -25,7 +25,7 @@ Real-time password strength analysis with security awareness training. Check pas
 - Multi-factor authentication promotion
 - Interactive learning with real-time feedback
 
-## 🛡️ Security & Compliance
+## Security & Compliance
 
 - NIST 800-63B compliance checking
 - Enterprise password policy validation
@@ -34,19 +34,19 @@ Real-time password strength analysis with security awareness training. Check pas
 - GDPR compliant design
 - Secure k-anonymity model for breach checking
 
-## 🚀 Installation
+## Installation
 
 ### WordPress Plugin Directory
 1. Log in to your WordPress admin dashboard
-2. Navigate to **Plugins → Add New**
+2. Navigate to **Plugins -> Add New**
 3. Search for "HailBytes Password Strength Analyzer"
 4. Click **Install Now** and then **Activate**
 
 ### Manual Installation
 1. Download the plugin ZIP file
-2. Upload via **Plugins → Add New → Upload Plugin**
+2. Upload via **Plugins -> Add New -> Upload Plugin**
 3. Activate the plugin
-4. Configure settings under **Settings → HailBytes PSA**
+4. Configure settings under **Settings -> HailBytes PSA**
 
 ### Usage
 Add the shortcode to any page or post:
@@ -54,7 +54,7 @@ Add the shortcode to any page or post:
 [password_strength_analyzer]
 ```
 
-## 🛠️ Technical Features
+## Technical Features
 
 - **Entropy Calculation**: `log2(character_space^password_length)`
 - **Time-to-crack estimation** based on current processing power
@@ -65,7 +65,7 @@ Add the shortcode to any page or post:
 - **Progressive Web App** features
 - **Translation ready** with internationalization support
 
-## 🎨 Customization
+## Customization
 
 ### Shortcode Parameters
 - `show_education="false"` - Hide educational content
@@ -78,7 +78,7 @@ Add the shortcode to any page or post:
 - Dark theme
 - Customizable via CSS custom properties
 
-## 🔒 Privacy & Security
+## Privacy & Security
 
 ### Password Analysis
 - All analysis performed client-side using JavaScript
@@ -90,7 +90,7 @@ Add the shortcode to any page or post:
 - Only first 5 characters of SHA-1 hash transmitted
 - Actual passwords never leave user's device
 
-## 📊 Algorithm Details
+## Algorithm Details
 
 The plugin uses advanced algorithms for comprehensive password analysis:
 
@@ -100,7 +100,7 @@ The plugin uses advanced algorithms for comprehensive password analysis:
 - **Pattern detection** based on security research
 - **Regular updates** to threat databases
 
-## 💼 Perfect For
+## Perfect For
 
 - Security training companies and consultants
 - Educational institutions and universities
@@ -109,21 +109,21 @@ The plugin uses advanced algorithms for comprehensive password analysis:
 - Cybersecurity awareness programs
 - Employee onboarding and training
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions! Please feel free to submit pull requests or open issues for bugs and feature requests.
 
-## 📞 Support
+## Support
 
 - **Documentation**: https://hailbytes.com/docs/password-analyzer
 - **Support Email**: support@hailbytes.com
 - **Security Training**: https://hailbytes.com/training
 
-## 📄 License
+## License
 
 This project is licensed under the GPL v2 or later - see the [LICENSE](https://www.gnu.org/licenses/gpl-2.0.html) file for details.
 
-## 🏢 About HailBytes
+## About HailBytes
 
 HailBytes specializes in cybersecurity education and awareness programs. We're leaders in security training solutions for organizations of all sizes.
 
@@ -133,7 +133,7 @@ HailBytes specializes in cybersecurity education and awareness programs. We're l
 
 ---
 
-**Developed with ❤️ by [HailBytes](https://hailbytes.com)**
+**Developed by [HailBytes](https://hailbytes.com)**
 
 ---
 
@@ -143,4 +143,4 @@ HailBytes specializes in cybersecurity education and awareness programs. We're l
 
 Running phishing simulations at scale? **HailBytes SAT** delivers managed GoPhish with enterprise support, on AWS and Azure Marketplaces.
 
-[**Get Enterprise Support →**](https://www.hailbytes.com/sat?utm_source=github&utm_medium=repo_readme&utm_campaign=hailbytes-password-analyzer&utm_content=enterprise_banner)
+[**Get Enterprise Support ->**](https://www.hailbytes.com/sat?utm_source=github&utm_medium=repo_readme&utm_campaign=hailbytes-password-analyzer&utm_content=enterprise_banner)
