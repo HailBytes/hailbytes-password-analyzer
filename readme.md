@@ -134,3 +134,13 @@ HailBytes specializes in cybersecurity education and awareness programs. We're l
 ---
 
 **Developed with ❤️ by [HailBytes](https://hailbytes.com)**
+
+---
+
+## Enterprise Support
+
+[![HailBytes - Managed Security Awareness Training](https://hailbytes.com/images/icons/hb_hb_white_horizontal.png)](https://www.hailbytes.com/sat?utm_source=github&utm_medium=repo_readme&utm_campaign=hailbytes-password-analyzer&utm_content=enterprise_banner)
+
+Running phishing simulations at scale? **HailBytes SAT** delivers managed GoPhish with enterprise support, on AWS and Azure Marketplaces.
+
+[**Get Enterprise Support →**](https://www.hailbytes.com/sat?utm_source=github&utm_medium=repo_readme&utm_campaign=hailbytes-password-analyzer&utm_content=enterprise_banner)
