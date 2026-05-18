@@ -1,8 +1,10 @@
 # HailBytes Password Strength Analyzer
 
-> **Zero-dependency web component** — works in Hugo, React, Vue, plain HTML, or any SPA framework. No build step, no npm install, no bundler.
+> **Zero-dependency web component** — works in Hugo, React, Vue, plain HTML, or any SPA framework. Install via npm or drop in via a `<script type="module">` CDN tag.
 
+[![npm version](https://img.shields.io/npm/v/@hailbytes/password-analyzer.svg)](https://www.npmjs.com/package/@hailbytes/password-analyzer)
 [![License: MPL-2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](LICENSE)
+[![Zero deps](https://img.shields.io/badge/dependencies-0-brightgreen.svg)](#)
 
 ---
 
@@ -29,9 +31,32 @@ A single JavaScript file that registers a custom HTML element `<hailbytes-passwo
 
 ---
 
+## Install
+
+```bash
+npm install @hailbytes/password-analyzer
+```
+
+Or use it without a bundler via a CDN (see below).
+
 ## Quick Start
 
-### 1. Plain HTML / Hugo / Static Sites
+### 1. npm (bundlers, Next.js, Vite, Webpack, etc.)
+
+```js
+// Side-effect import registers the <hailbytes-password-strength> custom element.
+import '@hailbytes/password-analyzer';
+
+// Or import the pure DOM-free analyzer:
+import { analyze } from '@hailbytes/password-analyzer';
+console.log(analyze('Tr0ub4dor&3').score);
+```
+
+```html
+<hailbytes-password-strength theme="dark"></hailbytes-password-strength>
+```
+
+### 2. Plain HTML / Hugo / Static Sites
 
 ```html
 <!-- Load the component -->
@@ -40,13 +65,19 @@ A single JavaScript file that registers a custom HTML element `<hailbytes-passwo
 <!-- Use it anywhere on the page -->
 <hailbytes-password-strength></hailbytes-password-strength>
 
-<!-- Dark theme -->
-<hailbytes-password-strength theme="dark"></hailbytes-password-strength>
+<!-- Dark theme, white-label (no "by HailBytes" footer) -->
+<hailbytes-password-strength theme="dark" branding="off"></hailbytes-password-strength>
 ```
 
-### 2. Via CDN (jsDelivr — no download needed)
+### 3. Via CDN (jsDelivr — no download needed)
 
 ```html
+<!-- From npm via jsDelivr (recommended — version-pinned) -->
+<script type="module"
+  src="https://cdn.jsdelivr.net/npm/@hailbytes/password-analyzer/hailbytes-password-strength.js">
+</script>
+
+<!-- Or directly from GitHub main (always latest) -->
 <script type="module"
   src="https://cdn.jsdelivr.net/gh/HailBytes/hailbytes-password-analyzer@main/hailbytes-password-strength.js">
 </script>
@@ -54,7 +85,7 @@ A single JavaScript file that registers a custom HTML element `<hailbytes-passwo
 <hailbytes-password-strength theme="dark"></hailbytes-password-strength>
 ```
 
-### 3. React / Vue
+### 4. React / Vue
 
 ```js
 // In your entry point or component file:
@@ -106,9 +137,10 @@ const onScore = (e) => console.log(e.detail);
 
 ### Attributes
 
-| Attribute | Values              | Default | Description                        |
-|-----------|---------------------|---------|------------------------------------|
-| `theme`   | `"light"` / `"dark"` | `"light"` | Color theme for the component     |
+| Attribute  | Values              | Default   | Description                                          |
+|------------|---------------------|-----------|------------------------------------------------------|
+| `theme`    | `"light"` / `"dark"` | `"light"` | Color theme for the component                        |
+| `branding` | `"off"`             | _(shown)_ | Hide the "by HailBytes" footer for white-label embeds |
 
 ### Custom Events
 
@@ -190,6 +222,17 @@ console.log(result.crackTime); // "Centuries"
 | Common password penalty | −30 |
 
 Strength levels: Very Weak (0–19) · Weak (20–39) · Fair (40–59) · Strong (60–79) · Very Strong (80–100)
+
+---
+
+## See also
+
+Part of the HailBytes calculator suite — drop-in web components for security and risk:
+
+- [`@hailbytes/password-analyzer`](https://www.npmjs.com/package/@hailbytes/password-analyzer) — password strength + entropy analyzer _(this package)_
+- [`@hailbytes/pentest-calculator`](https://www.npmjs.com/package/@hailbytes/pentest-calculator) — penetration testing scope and cost estimator ([repo](https://github.com/HailBytes/hailbytes-pentest-calculator))
+- [`@hailbytes/vulnerability-calculator`](https://www.npmjs.com/package/@hailbytes/vulnerability-calculator) — vulnerability scanner infrastructure sizing ([repo](https://github.com/HailBytes/hailbytes-vulnerability-calculator))
+- [`@hailbytes/security-roi-calculator`](https://www.npmjs.com/package/@hailbytes/security-roi-calculator) — security awareness training ROI ([repo](https://github.com/HailBytes/hailbytes-security-roi-calculator))
 
 ---
 
