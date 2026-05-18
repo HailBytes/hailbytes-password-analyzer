@@ -214,6 +214,8 @@ const COMPONENT_CSS = `
   }
   *, *::before, *::after { box-sizing: inherit; }
 
+  :host([branding="off"]) .hb-branding { display: none; }
+
   /* ── Theme variables ── */
   :host([theme="dark"]), :host(.dark) {
     --bg:          #1a1a2e;
@@ -452,7 +454,7 @@ const COMPONENT_CSS = `
 `;
 
 class HailbytesPasswordStrength extends HTMLElement {
-  static get observedAttributes() { return ['theme']; }
+  static get observedAttributes() { return ['theme', 'branding']; }
 
   constructor() {
     super();
@@ -485,7 +487,7 @@ class HailbytesPasswordStrength extends HTMLElement {
           <div class="logo-mark">🔐</div>
           <div>
             <h2>Password Strength Analyzer</h2>
-            <p>by <a href="https://hailbytes.com" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none">HailBytes</a></p>
+            <p class="hb-branding">by <a href="https://hailbytes.com/sat" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none">HailBytes</a></p>
           </div>
         </div>
 
