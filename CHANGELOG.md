@@ -1,0 +1,25 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [Unreleased]
+
+## [0.1.0] - 2026-05-18
+
+### Added
+- Initial release as `@hailbytes/password-analyzer` on npm.
+- Custom element `<hailbytes-password-strength>` (Web Components / Shadow DOM).
+- `analyze(password)` named export — pure, DOM-free strength analysis.
+- `theme="dark|light"` attribute.
+- `branding="off"` attribute — hides the "by HailBytes" footer for white-label embeds.
+- TypeScript declarations (`index.d.ts`).
+- npm provenance + signed publish workflow.
+
+### Changed
+- Footer link now deep-links to https://hailbytes.com/sat (was the root domain).
+
+[Unreleased]: https://github.com/HailBytes/hailbytes-password-analyzer/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/HailBytes/hailbytes-password-analyzer/releases/tag/v0.1.0
