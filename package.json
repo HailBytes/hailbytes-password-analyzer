@@ -1,0 +1,58 @@
+{
+  "name": "@hailbytes/password-analyzer",
+  "version": "0.1.0",
+  "description": "Zero-dependency web component for password strength analysis. Works in Hugo, React, Vue, or plain HTML.",
+  "type": "module",
+  "main": "./hailbytes-password-strength.js",
+  "module": "./hailbytes-password-strength.js",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./hailbytes-password-strength.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "types": "./index.d.ts",
+  "files": [
+    "hailbytes-password-strength.js",
+    "index.d.ts",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "sideEffects": [
+    "./hailbytes-password-strength.js"
+  ],
+  "scripts": {
+    "test": "node --test test/smoke.test.mjs"
+  },
+  "keywords": [
+    "password",
+    "password-strength",
+    "password-analyzer",
+    "security",
+    "web-component",
+    "custom-element",
+    "es-module",
+    "zero-dependency",
+    "hailbytes",
+    "vanilla-js"
+  ],
+  "author": "HailBytes, LLC (https://hailbytes.com)",
+  "license": "MPL-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HailBytes/hailbytes-password-analyzer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HailBytes/hailbytes-password-analyzer/issues"
+  },
+  "homepage": "https://hailbytes.com/sat",
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}
