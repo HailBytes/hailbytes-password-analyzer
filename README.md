@@ -79,7 +79,7 @@ console.log(analyze('Tr0ub4dor&3').score);
 
 <!-- Or directly from GitHub main (always latest) -->
 <script type="module"
-  src="https://cdn.jsdelivr.net/gh/HailBytes/hailbytes-password-analyzer@main/hailbytes-password-strength.js">
+  src="https://cdn.jsdelivr.net/gh/HailBytes/password-analyzer@main/hailbytes-password-strength.js">
 </script>
 
 <hailbytes-password-strength theme="dark"></hailbytes-password-strength>
@@ -244,11 +244,11 @@ Part of the HailBytes calculator suite — drop-in web components for security a
 
 ## Enterprise Support
 
-[![HailBytes - Managed Security Awareness Training](https://hailbytes.com/images/icons/hb_hb_white_horizontal.png)](https://www.hailbytes.com/sat?utm_source=github&utm_medium=repo_readme&utm_campaign=hailbytes-password-analyzer&utm_content=enterprise_banner)
+[![HailBytes - Managed Security Awareness Training](https://hailbytes.com/images/icons/hb_hb_white_horizontal.png)](https://www.hailbytes.com/sat?utm_source=github&utm_medium=repo_readme&utm_campaign=password-analyzer&utm_content=enterprise_banner)
 
 Running phishing simulations at scale? **HailBytes SAT** delivers managed GoPhish with enterprise support, on AWS and Azure Marketplaces.
 
-[**Get Enterprise Support ->**](https://www.hailbytes.com/sat?utm_source=github&utm_medium=repo_readme&utm_campaign=hailbytes-password-analyzer&utm_content=enterprise_banner)
+[**Get Enterprise Support ->**](https://www.hailbytes.com/sat?utm_source=github&utm_medium=repo_readme&utm_campaign=password-analyzer&utm_content=enterprise_banner)
 
 ---
 
