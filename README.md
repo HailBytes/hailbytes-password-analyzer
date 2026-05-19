@@ -3,6 +3,7 @@
 > **Zero-dependency web component** — works in Hugo, React, Vue, plain HTML, or any SPA framework. Install via npm or drop in via a `<script type="module">` CDN tag.
 
 [![npm version](https://img.shields.io/npm/v/@hailbytes/password-analyzer.svg)](https://www.npmjs.com/package/@hailbytes/password-analyzer)
+[![npm downloads](https://img.shields.io/npm/dw/%40hailbytes%2Fpassword-analyzer.svg)](https://www.npmjs.com/package/@hailbytes/password-analyzer)
 [![License: MPL-2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](LICENSE)
 [![Zero deps](https://img.shields.io/badge/dependencies-0-brightgreen.svg)](#)
 [![Bundle Size](https://img.shields.io/bundlephobia/minzip/%40hailbytes%2Fpassword-analyzer)](https://bundlephobia.com/package/@hailbytes/password-analyzer)
