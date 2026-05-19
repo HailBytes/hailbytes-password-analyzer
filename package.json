@@ -1,6 +1,6 @@
 {
   "name": "@hailbytes/password-analyzer",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Zero-dependency web component for password strength analysis. Works in Hugo, React, Vue, or plain HTML.",
   "type": "module",
   "main": "./hailbytes-password-strength.js",
