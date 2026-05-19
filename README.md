@@ -255,3 +255,6 @@ Running phishing simulations at scale? **HailBytes SAT** delivers managed GoPhis
 ## About HailBytes
 
 [HailBytes](https://hailbytes.com) provides cybersecurity training, phishing simulation, and security awareness tools for organizations.
+---
+
+*Part of the [HailBytes](https://hailbytes.com) open-source security toolkit.*
