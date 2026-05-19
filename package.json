@@ -42,10 +42,10 @@
   "license": "MPL-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HailBytes/hailbytes-password-analyzer.git"
+    "url": "git+https://github.com/HailBytes/password-analyzer.git"
   },
   "bugs": {
-    "url": "https://github.com/HailBytes/hailbytes-password-analyzer/issues"
+    "url": "https://github.com/HailBytes/password-analyzer/issues"
   },
   "homepage": "https://hailbytes.com/sat",
   "engines": {
