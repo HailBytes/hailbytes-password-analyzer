@@ -4,10 +4,11 @@
 
 export interface PasswordComposition {
   length: number;
-  lower?: number;
-  upper?: number;
-  numbers?: number;
-  symbols?: number;
+  lowerCount: number;
+  upperCount: number;
+  numberCount: number;
+  symbolCount: number;
+  uniqueChars: number;
 }
 
 export interface PasswordCheck {
